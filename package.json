@@ -1,0 +1,46 @@
+{
+  "name": "gygym",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -k -n api,web -c cyan,green \"node server/dev-api.js\" \"vite --port 5174\"",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "oxlint",
+    "db:setup": "node db/setup.js",
+    "test": "vitest run",
+    "test:e2e": "playwright test",
+    "test:all": "npm run test && npm run test:e2e"
+  },
+  "dependencies": {
+    "@electric-sql/pglite": "^0.5.10",
+    "@neondatabase/serverless": "^1.2.0",
+    "@tailwindcss/vite": "^4.3.3",
+    "bcryptjs": "^3.0.3",
+    "canvas-confetti": "^1.9.4",
+    "dotenv": "^18.0.8",
+    "express": "^5.3.0",
+    "framer-motion": "^14.3.0",
+    "jose": "^6.2.12",
+    "lucide-react": "^1.57.0",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "react-router-dom": "^7.18.4",
+    "recharts": "^3.10.1",
+    "tailwindcss": "^4.3.3",
+    "ws": "^8.22.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.64.1",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.7",
+    "@vitejs/plugin-react": "^6.1.1",
+    "concurrently": "^10.0.6",
+    "lighthouse": "^13.5.0",
+    "oxlint": "^1.81.0",
+    "supertest": "^7.3.1",
+    "vite": "^8.3.0",
+    "vitest": "^5.0.5"
+  }
+}
